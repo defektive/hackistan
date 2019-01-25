@@ -1,4 +1,4 @@
-# BlackArch
+# Hackistan
 **Arch linux, bspwm, yay, BlackArch Repos**
 
 This uses vagrant, but everything should work on a clean install of Arch
