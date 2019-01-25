@@ -10,6 +10,7 @@ This uses vagrant, but everything should work on a clean install of Arch
 ## Getting Started
 
 ### Vagrant
+**sadly I couldn't get certain key combinations to work (super + {Left, Right, Up, Down}) so that has been mapped to alt**
 
 ```
 vagrant up
