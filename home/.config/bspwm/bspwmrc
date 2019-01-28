@@ -7,7 +7,7 @@ else
 fi
 
 polybar -r -c ~/.config/polybar/config hd &
-compton &
+# compton &
 
 feh --randomize --bg-tile $HOME/.config/wallpaper/repeatable/dark/*
 
