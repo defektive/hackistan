@@ -1,0 +1,10 @@
+---
+- name: op-1
+  memory: 16384
+  cpu: 8
+- name: op-2
+  memory: 16384
+  cpu: 8
+- name: op-3
+  memory: 16384
+  cpu: 8

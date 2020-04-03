@@ -1,0 +1,13 @@
+#! /bin/bash
+
+sdf_bspwm_desktops
+killall polybar
+
+for monitor_info in `xrandr --listactivemonitors | tail -n +2 | awk '{print $4 "|" $3}'`; do
+  export MONITOR_WIDTH=$(echo $monitor_info | cut -d '|' -f 2 | cut -d '/' -f 1)
+  export MONITOR=$(echo $monitor_info | cut -d '|' -f 1)
+
+  echo Monitor: $MONITOR
+  echo Width: $MONITOR_WIDTH
+  polybar -l error -r -c ~/.config/polybar/config default & #2>/dev/null 1>/dev/null &
+done

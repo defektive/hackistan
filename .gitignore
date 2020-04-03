@@ -1,5 +1,10 @@
 .vagrant
-home/.config/personal/*
+boxes.yaml
 
-!home/.config/personal/README.md
-!home/.config/personal/*.example
+src/home/.config/personal/*
+!src/home/.config/personal/README.md
+!src/home/.config/personal/*.example
+
+src/private
+
+src/provisioners/etc/defaults/*extra.txt

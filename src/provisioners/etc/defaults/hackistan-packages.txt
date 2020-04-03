@@ -1,0 +1,10 @@
+amass
+aquatone
+aws-cli
+hydra
+nmap
+prowler
+proxychains-ng
+radare2
+scapy
+wireshark-qt

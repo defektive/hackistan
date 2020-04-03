@@ -5,16 +5,36 @@ This uses vagrant, but everything should work on a clean install of Arch
 
 ![Screenshot](screenshot.png)
 
----
+******
 
 ## Getting Started
 
 ### Vagrant
-**sadly I couldn't get certain key combinations to work (super + {Left, Right, Up, Down}) so that has been mapped to alt**
+
+#### Single Machine
 
 ```
 vagrant up
+vagrant ssh
 ```
+
+#### Multi Machine
+
+```
+cp example.boxes.yaml boxes.yaml
+vim boxes.yaml # customize if you want
+vagrant up op1
+
+vagrant up op2
+
+# done with op2
+vagrant destroy op2
+
+```
+
+******
+
+
 
 ### Bare metal
 
