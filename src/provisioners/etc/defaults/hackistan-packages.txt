@@ -2,6 +2,7 @@ amass
 aquatone
 aws-cli
 hydra
+mobsf
 nmap
 prowler
 proxychains-ng

@@ -32,6 +32,16 @@ vagrant destroy op2
 
 ```
 
+sometimes its nice not to have to be in the vagrant folder. you can add a VM's ssh config to your config.
+```
+vagrant ssh-config >> ~/.ssh/config
+```
+
+Then you should be able to run the following from anywhere.
+```
+ssh op1
+```
+
 ******
 
 
