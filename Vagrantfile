@@ -22,25 +22,25 @@ Vagrant.configure("2") do |config|
     machine = default_opts.merge(machine)
 
     config.vm.define machine["name"] do |node|
-      config.vm.box = "archlinux/archlinux"
+      node.vm.box = "archlinux/archlinux"
 
-      config.vm.synced_folder "src/", "/home/vagrant/hackistan/"
+      node.vm.synced_folder "src/", "/home/vagrant/hackistan/"
 
-      config.vm.provision "bootstrap", type: "shell", run: "once", inline: "/home/vagrant/hackistan/provisioners/bootstrap.sh"
-      config.vm.provision "bootstrap", type: "shell", run: "always", inline: "/home/vagrant/hackistan/provisioners/install_default.sh"
-      config.vm.provision "bootstrap_user", type: "shell", run: "always", privileged: false, inline: "/home/vagrant/hackistan/provisioners/bootstrap_user.sh"
+      node.vm.provision "bootstrap", type: "shell", run: "once", inline: "/home/vagrant/hackistan/provisioners/bootstrap.sh"
+      node.vm.provision "bootstrap", type: "shell", run: "always", inline: "/home/vagrant/hackistan/provisioners/install_default.sh"
+      node.vm.provision "bootstrap_user", type: "shell", run: "always", privileged: false, inline: "/home/vagrant/hackistan/provisioners/bootstrap_user.sh"
 
-      config.vm.provision "aur", type: "shell", run: "always", privileged: false, inline: "/home/vagrant/hackistan/provisioners/install_aur.sh"
-      config.vm.provision "blackarch", type: "shell", run: "always", inline: "/home/vagrant/hackistan/provisioners/install_blackarch.sh"
+      node.vm.provision "aur", type: "shell", run: "always", privileged: false, inline: "/home/vagrant/hackistan/provisioners/install_aur.sh"
+      node.vm.provision "blackarch", type: "shell", run: "always", inline: "/home/vagrant/hackistan/provisioners/install_blackarch.sh"
 
-      config.vm.provision "desktop", type: "shell", run: "always", privileged: false, inline: "/home/vagrant/hackistan/provisioners/install_desktop.sh"
-      config.vm.provision "hackistan", type: "shell", run: "always", privileged: false, inline: "/home/vagrant/hackistan/provisioners/install_hackistan.sh"
+      node.vm.provision "desktop", type: "shell", run: "always", privileged: false, inline: "/home/vagrant/hackistan/provisioners/install_desktop.sh"
+      node.vm.provision "hackistan", type: "shell", run: "always", privileged: false, inline: "/home/vagrant/hackistan/provisioners/install_hackistan.sh"
 
-      # config.vm.provision :shell, path: "setup/update.sh", run: "always"
-      config.ssh.forward_x11 = true
-      config.ssh.forward_agent = true
+      # node.vm.provision :shell, path: "setup/update.sh", run: "always"
+      node.ssh.forward_x11 = true
+      node.ssh.forward_agent = true
 
-      config.vm.provider "virtualbox" do |vb|
+      node.vm.provider "virtualbox" do |vb|
         vb.gui = machine["gui"]
         # vb.name = machine_name
         vb.memory = machine["memory"]
