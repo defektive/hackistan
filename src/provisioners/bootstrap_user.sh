@@ -7,8 +7,8 @@ if [ -z $SOURCE_DIR ]; then
 fi
 
 source $SOURCE_DIR/provisioners/etc/common.sh
-
 cd $HOME
+sudo chown -R $(whoami):$(whoami) .
 mkdir -p .config
 
 # link_file .gdbinit

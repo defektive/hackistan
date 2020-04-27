@@ -6,7 +6,6 @@ if [ -z $SOURCE_DIR ]; then
   SOURCE_DIR=`pwd`
   popd > /dev/null
 fi
-
 source $SOURCE_DIR/provisioners/etc/common.sh
 
 _infoStart "Installing hackistan packages"

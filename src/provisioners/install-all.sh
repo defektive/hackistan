@@ -1,4 +1,5 @@
 #! /bin/bash
+
 if [ -z $SOURCE_DIR ]; then
   # determine script path
   pushd $(dirname `dirname $0`) > /dev/null
@@ -7,9 +8,8 @@ if [ -z $SOURCE_DIR ]; then
 fi
 source $SOURCE_DIR/provisioners/etc/common.sh
 
+_infoStart "Yeah. I am that lazy..."
+packages=$(echo $(cat $SOURCE_DIR/provisioners/etc/defaults/*packages*.txt))
+yay --needed -Sy $packages
 
-link_file .xinitrc
-link_file .Xresources
-
-link_config dunst
-link_config termite
+_infoStatus "Congrats! its all done"

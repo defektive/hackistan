@@ -8,3 +8,4 @@ src/home/.config/personal/*
 src/private
 
 src/provisioners/etc/defaults/*extra.txt
+src/home/.config/gtk-3.0/bookmarks

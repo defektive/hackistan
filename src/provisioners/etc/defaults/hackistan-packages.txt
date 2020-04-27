@@ -1,6 +1,7 @@
 amass
 aquatone
 aws-cli
+exploitdb
 hydra
 mobsf
 nmap

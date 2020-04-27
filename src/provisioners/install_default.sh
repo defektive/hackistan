@@ -6,11 +6,10 @@ if [ -z $SOURCE_DIR ]; then
   SOURCE_DIR=`pwd`
   popd > /dev/null
 fi
-
 source $SOURCE_DIR/provisioners/etc/common.sh
 
 _infoStart "Installing default packages"
 packages=$(echo $(cat $SOURCE_DIR/provisioners/etc/defaults/default-packages*.txt))
-pacman --needed --noconfirm -S $packages
+sudo pacman --needed --noconfirm -S $packages
 
 _infoStatus "Default package install complete"

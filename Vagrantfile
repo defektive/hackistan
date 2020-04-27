@@ -24,17 +24,17 @@ Vagrant.configure("2") do |config|
     config.vm.define machine["name"] do |node|
       node.vm.box = "archlinux/archlinux"
 
-      node.vm.synced_folder "src/", "/home/vagrant/hackistan/"
+      node.vm.synced_folder "src/", "/home/vagrant/.config/hackistan/"
 
-      node.vm.provision "bootstrap", type: "shell", run: "once", inline: "/home/vagrant/hackistan/provisioners/bootstrap.sh"
-      node.vm.provision "bootstrap", type: "shell", run: "always", inline: "/home/vagrant/hackistan/provisioners/install_default.sh"
-      node.vm.provision "bootstrap_user", type: "shell", run: "always", privileged: false, inline: "/home/vagrant/hackistan/provisioners/bootstrap_user.sh"
+      node.vm.provision "bootstrap", type: "shell", run: "once", inline: "/home/vagrant/.config/hackistan/provisioners/bootstrap.sh"
+      node.vm.provision "bootstrap", type: "shell", run: "always", inline: "/home/vagrant/.config/hackistan/provisioners/install_default.sh"
+      node.vm.provision "bootstrap_user", type: "shell", run: "always", privileged: false, inline: "/home/vagrant/.config/hackistan/provisioners/bootstrap_user.sh"
 
-      node.vm.provision "aur", type: "shell", run: "always", privileged: false, inline: "/home/vagrant/hackistan/provisioners/install_aur.sh"
-      node.vm.provision "blackarch", type: "shell", run: "always", inline: "/home/vagrant/hackistan/provisioners/install_blackarch.sh"
+      node.vm.provision "aur", type: "shell", run: "always", privileged: false, inline: "/home/vagrant/.config/hackistan/provisioners/install_aur.sh"
+      node.vm.provision "blackarch", type: "shell", run: "always", inline: "/home/vagrant/.config/hackistan/provisioners/install_blackarch.sh"
 
-      node.vm.provision "desktop", type: "shell", run: "always", privileged: false, inline: "/home/vagrant/hackistan/provisioners/install_desktop.sh"
-      node.vm.provision "hackistan", type: "shell", run: "always", privileged: false, inline: "/home/vagrant/hackistan/provisioners/install_hackistan.sh"
+      node.vm.provision "desktop", type: "shell", run: "always", privileged: false, inline: "/home/vagrant/.config/hackistan/provisioners/install_desktop.sh"
+      node.vm.provision "hackistan", type: "shell", run: "always", privileged: false, inline: "/home/vagrant/.config/hackistan/provisioners/install_hackistan.sh"
 
       # node.vm.provision :shell, path: "setup/update.sh", run: "always"
       node.ssh.forward_x11 = true
